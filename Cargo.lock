@@ -185,6 +185,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "microbit-common"
+version = "0.16.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72c90ad93bffa091917aec5290f6aec6bf7e28c6cd4cb064cc93fae58734bdf3"
+dependencies = [
+ "embedded-hal 1.0.0",
+ "nrf52833-hal",
+ "tiny-led-matrix",
+]
+
+[[package]]
+name = "microbit-v2"
+version = "0.16.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "90a363a71fefbf3f5c5e94ad961539d85e493ce760d2384c1d30d555c6937198"
+dependencies = [
+ "microbit-common",
+]
+
+[[package]]
 name = "nb"
 version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -303,9 +323,9 @@ dependencies = [
 name = "rustymicrobit"
 version = "0.1.0"
 dependencies = [
- "cortex-m",
  "cortex-m-rt",
  "embedded-hal 1.0.0",
+ "microbit-v2",
  "nrf52833-hal",
  "panic-halt",
 ]
@@ -352,6 +372,12 @@ dependencies = [
  "quote",
  "unicode-ident",
 ]
+
+[[package]]
+name = "tiny-led-matrix"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a718c727b686154a7c7913f70d7ebc8956f701cbab466bc22035cb27f378882b"
 
 [[package]]
 name = "typenum"
